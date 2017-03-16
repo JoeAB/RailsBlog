@@ -1,3 +1,37 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$color1 : #5CB7BF;
+$color2 : #3D7A7F;
+$color3 : #7AF4FF;
+$color4 : #1F3D40;
+$color5 : #6EDBE5;
+$borderDefault: 4px solid $color4;
+
+
+body{
+	background-color: $color1;
+	color: white;
+	text-align: center;
+	h1{
+		border: $borderDefault;
+		background-color: $color2;
+		text-align: center;
+
+	}
+	a{
+		color: #F5F5F5;
+		&:hover{
+			color:  #808080;
+		}
+		&:visited{
+			color:  #d9d9d9;
+		}
+	}
+	td{
+		padding: 15px;
+		border: 2px solid $color4;
+	
+	}
+	
+}
