@@ -2,14 +2,19 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-@validateArticleTitle = ->
-	title = document.getElementById('article_title').value
 
-	if title == ""
-		alert "Title can't be blank."
-		
-@validateArticleText = ->
+
+@validateArticle = ->
+	title = document.getElementById('article_title').value
 	text = document.getElementById('article_text').value
+	alertMessage = ""
+	needToAlert = false
 	
+	if title == ""
+		alertMessage += "Title can't be blank.\n"
+		needToAlert = true
 	if text == ""
-		alert "Content can't be blank."
+		alertMessage += "Text body can't be blank."
+		needToAlert = true
+	if needToAlert
+		alert alertMessage

@@ -1,13 +1,13 @@
 <%= form_for([@article, @article.comments.build]) do |f| %>
   <p>
     <%= f.label:commenter %><br>
-    <%= f.text_field :commenter, :onBlur => "validateCommentCommenter()" %>
+    <%= f.text_field :commenter %>
   </p>
   <p>
     <%= f.label :body %><br>
-    <%= f.text_area :body, :onBlur => "validateCommentBody()" %>
+    <%= f.text_area :body %>
   </p>
   <p>
-    <%= f.submit %>
+    <%= f.submit :onMouseOver => "validateComment()" %>
   </p>
 <% end %>

@@ -2,14 +2,17 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-@validateCommentCommenter = ->
-	title = document.getElementById('comment_commenter').value
-
-	if title == ""
-		alert "Commenter can't be blank."
-		
-@validateCommentBody = ->
+@validateComment = ->
+	commenter = document.getElementById('comment_commenter').value
 	text = document.getElementById('comment_body').value
+	alertMessage = ""
+	needToAlert = false
 	
+	if commenter == ""
+		alertMessage += "Commenter can't be blank.\n"
+		needToAlert = true
 	if text == ""
-		alert "Comment body can't be blank."
+		alertMessage += "Comment body can't be blank."
+		needToAlert = true
+	if needToAlert
+		alert alertMessage
